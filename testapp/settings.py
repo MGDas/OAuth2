@@ -25,7 +25,7 @@ SECRET_KEY = '4%d$!nay++elyd7a39d%(u)_n!$5&jiatsb42s%592hrd3-y@*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -129,5 +129,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend', # бекенд классической аутентификации, чтобы работала авторизация через обычный логин и пароль
 )
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = 'XXXXXXX'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = 'XXXXXXXXXXXXXXXXXXXX'
+SOCIAL_AUTH_VK_OAUTH2_KEY = 'XXXXX'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'XXXXXXXXXXX'
+
+LOGIN_REDIRECT_URL = '/'

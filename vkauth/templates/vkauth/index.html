@@ -10,7 +10,20 @@
   <title>Document</title>
 </head>
 <body>
-    <h1>Tester!!!</h1>
+  {% if user.is_authenticated %}
+    <div class="container">
+      <ul class="list-group">
+        <h1>{{ user.first_name }} {{ user.last_name }}</h1>
 
+          {% for friend in friends.items %}
+            <li class="list-group-item">
+              <a href="http://vk.com/{{ friend.domain }}">{{ friend.first_name }} {{ friend.last_name }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+    </div>
+  {% else %}
+      <p><a class="btn btn-primary" href="{% url 'social:begin' 'vk-oauth2' %}" role="button">Авторизоваться</a></p>
+  {% endif %}
 </body>
 </html>
